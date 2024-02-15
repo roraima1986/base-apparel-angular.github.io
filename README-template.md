@@ -16,7 +16,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./design/base-apparel-design.jpg)
+![](./assets/design/base-apparel-design.jpg)
 
 ### Links
 
