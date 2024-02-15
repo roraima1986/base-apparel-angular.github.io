@@ -1,1 +1,185 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+:root {
+  --text-principal: "Josefin Sans", sans-serif;
+  --color-principal: hsl(0, 36%, 70%);
+  --color-active: hsl(0, 93%, 68%);
+  --color-dark: hsl(0, 6%, 24%);
+  --color-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --color-gradient-hover:  linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--text-principal);
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas:
+      "header sidebar"
+      "content sidebar"
+      "footer sidebar"
+  ;
+  grid-template-columns: 2.5fr 1.5fr;
+  background-image: url(./assets/images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  grid-area: header;
+  padding-top: 5rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.content {
+  grid-area: content;
+  padding-top: 5rem;
+  padding-right: 10rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.content__title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 2rem;
+}
+
+.title__highlight {
+  font-weight: 300;
+  color: var(--color-principal);
+}
+
+.content__description {
+  color: var(--color-principal);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.content__form {
+  display: flex;
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  border: 1px solid var(--color-principal);
+  font-family: var(--text-principal);
+  font-size: 1.1rem;
+}
+
+.form__input::placeholder {
+  color: var(--color-principal);
+}
+
+.form__input:focus {
+  outline: 1px solid var(--color-active);
+}
+
+.form__msg {
+  position: absolute;
+  bottom:-30px;
+  left: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-active);
+  display: block;
+}
+
+.form__icon-error {
+  position: absolute;
+  top: 25%;
+  right: 22%;
+  display: block;
+}
+
+
+.form__btn {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 3.3rem;
+  border-radius: 3rem;
+  border: none;
+  background: var(--color-gradient);
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.form__btn:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  grid-area: footer;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar__img {
+  width: 100%;
+}
+
+.attribution { font-size: 0.8rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* MOBILE SCREEN */
+@media (max-width: 891px) {
+  .layout {
+      grid-template-areas:
+          "header"
+          "sidebar"
+          "content"
+          "footer"
+      ;
+      grid-template-columns: 1fr;
+  }
+
+  .header,
+  .content,
+  .footer {
+      padding: 2rem;
+      width: 90%;
+  }
+
+  .sidebar {
+      height: auto;
+      margin-bottom: 2rem;
+  }
+
+  .content__title {
+      text-align: center;
+      font-size: 2rem;
+  }
+
+  .content__description {
+      text-align: center;
+      font-size: 1rem;
+  }
+
+
+}
+

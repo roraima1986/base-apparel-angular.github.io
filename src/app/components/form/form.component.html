@@ -1,0 +1,27 @@
+<form [formGroup]="myForm"
+      (ngSubmit)="onSubmit()"
+      class="content__form"
+      autocomplete="off"
+>
+
+  <input formControlName="email"
+          class="form__input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Address"
+          required
+  />
+
+  <!--Mensaje en caso de error-->
+  @if(submitted && myForm.controls['email'].errors) {
+    <img src="./assets/images/icon-error.svg" class="form__icon-error" alt="Error Icon" />
+    <p class="form__msg">Please provide a valid email</p>
+  }
+
+  <!--Boton de enviar-->
+  <button type="submit" class="form__btn" id="form-btn">
+    <img src="./assets/images/icon-arrow.svg" class="form__btn-img" alt="Arrow Icon" />
+  </button>
+
+</form>
