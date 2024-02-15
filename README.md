@@ -14,7 +14,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./assets/design/base-apparel-design.jpg)
+![](./src/assets/design/base-apparel-design.jpg)
 
 ## My process
 
